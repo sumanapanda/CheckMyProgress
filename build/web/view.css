@@ -1,0 +1,156 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+    min-height: 100vh;
+}
+
+/* Header Styling */
+/* Header Styling */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    display: flex;
+    justify-content: space-between;  /* Push h1 left and link right */
+    align-items: center;             /* Vertically center items */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    text-align: left;
+    padding-left: 150px;
+}
+
+.header a {
+    background: white;
+    color: #4CAF50;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.header a:hover {
+    background: #f1f1f1;
+}
+
+
+/* Task Container */
+.task-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+/*    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);*/
+    box-shadow: 0 4px 10px rgba(249, 249, 249, 0.5); 
+}
+
+/* Task Card Styling */
+.task-card {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.completed {
+    border: 2px solid transparent; /* transparent border */
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.6); /* green shadow */
+}
+
+.pending {
+    border: 2px solid transparent; /* transparent border */
+    box-shadow: 0 0 8px rgba(220, 53, 69, 0.6); /* red shadow */
+}
+
+
+/* Progress Bar */
+.progress-container {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #e9ecef;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.progress-fill {
+    height: 100%;
+    width: var(--progress-width);
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Green for completed tasks */
+.progress-fill.completed {
+    background: linear-gradient(90deg, #28a745, #4ade80);
+}
+
+/* Red for pending tasks */
+.progress-fill.pending {
+    background: linear-gradient(90deg, #dc3545, #f87171);
+}
+
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 1.6rem;
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    color: #2d3748;
+}
+
+h4 {
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-container {
+        padding: 1rem;
+    }
+    
+    .task-card {
+        padding: 1rem;
+    }
+}
